@@ -1,0 +1,182 @@
+<div class="col=md-10"  >
+    <div class="container">
+        <div class="tab-content" >
+            <!-- most popular movies-->
+            <div id="mostpopular" class="tab-pane fade">
+                <div style="padding-left:150px">            
+                    <div class="movieTitle">Most Popular</div>
+                    <div ng-controller="MoviesController">
+                        <ul class="img-thumbnails">
+                            <li class="thumbnail" ng-repeat="movie in myMovies | limitTo:8" style="display:inline-block; width:200px">
+                                <a ng-href="#/movies/{{movie.id}}">
+                                    <img ng-src="{{movie.Image}}"> {{movie.Title}}
+                                </a> 
+                            </li>
+                        </ul>                              
+                    </div>
+                </div>  
+            </div>
+                    
+            <!-- list of all movies -->
+            <div id="all" class="tab-pane fade  in active">
+                <div  style="padding-left:150px">            
+                    <div class="movieTitle">All</div>
+                    <div ng-controller="MoviesController">
+                        <ul class="img-thumbnails">
+                            <li class="thumbnail" ng-repeat="movie in myMovies | filter:search" style="display:inline-block; width:200px">
+                                <a ng-href="#/movies/{{movie.id}}">
+                                    <img src="{{movie.Image}}"> {{movie.Title}}
+                                </a>
+                            </li>
+                        </ul>                                    
+                    </div>
+                </div>
+            </div>
+                    
+            <!-- list of action movies -->
+            <div id="action" class="tab-pane fade">
+                <div  style="padding-left:150px">            
+                    <div class="movieTitle">Action</div>
+                    <div ng-controller="MoviesController">
+                        <ul class="img-thumbnails">
+                            <li class="thumbnail" ng-repeat="movie in myMovies | filter:{Genres:'Action' }" style="display:inline-block; width:200px">
+                                <a ng-href="#/movies/{{movie.id}}">
+                                    <img src="{{movie.Image}}"> {{movie.Title}}
+                                </a>
+                            </li>
+                        </ul>                                    
+                    </div>
+                </div>
+            </div>
+                    
+            <!-- list of adventure movies -->
+            <div id="adventure" class="tab-pane fade">
+                <div  style="padding-left:150px">            
+                    <div class="movieTitle">Adventure</div>
+                    <div ng-controller="MoviesController">
+                        <ul class="img-thumbnails">
+                            <li class="thumbnail" ng-repeat="movie in myMovies | filter:{Genres:'Adventure' }" style="display:inline-block; width:200px">
+                                <a ng-href="#/movies/{{movie.id}}">
+                                    <img src="{{movie.Image}}">{{movie.Title}}
+                                </a>
+                            </li>
+                        </ul>                                    
+                    </div>
+                </div>
+            </div>
+                    
+            <!-- list of animation movies -->
+            <div id="animation" class="tab-pane fade">
+                <div  style="padding-left:150px">            
+                    <div class="movieTitle">Animation</div>
+                    <div ng-controller="MoviesController">
+                        <ul class="img-thumbnails">
+                            <li class="thumbnail" ng-repeat="movie in myMovies | filter:{Genres:'Animation' }" style="display:inline-block; width:200px">
+                                <a ng-href="#/movies/{{movie.id}}">
+                                    <img src="{{movie.Image}}">{{movie.Title}}
+                                </a>
+                            </li>
+                        </ul>                                    
+                    </div>
+                </div>
+            </div>
+                    
+            <!-- list of comedy movies -->                                          
+            <div id="comedy" class="tab-pane fade">
+                <div  style="padding-left:150px">            
+                    <div class="movieTitle">Comedy</div>
+                    <div ng-controller="MoviesController">
+                        <ul class="img-thumbnails">
+                            <li class="thumbnail" ng-repeat="movie in myMovies | filter:{Genres:'Comedy' }" style="display:inline-block; width:200px">
+                                <a ng-href="#/movies/{{movie.id}}">
+                                    <img src="{{movie.Image}}"> {{movie.Title}}
+                                </a>
+                            </li>
+                        </ul>                                    
+                    </div>
+                </div>
+            </div>
+                    
+            <!-- list of comedy movies -->                                          
+            <div id="drama" class="tab-pane fade">
+                <div  style="padding-left:150px">            
+                    <div class="movieTitle">Drama</div>
+                    <div ng-controller="MoviesController">
+                        <ul class="img-thumbnails">
+                            <li class="thumbnail" ng-repeat="movie in myMovies | filter:{Genres:'Drama' }" style="display:inline-block; width:200px">
+                                <a ng-href="#/movies/{{movie.id}}">
+                                    <img src="{{movie.Image}}">{{movie.Title}}
+                                </a>
+                            </li>
+                        </ul>                                    
+                    </div>
+                </div>
+            </div>
+                    
+            <!-- list of comedy movies -->                                          
+            <div id="family" class="tab-pane fade">
+                <div  style="padding-left:150px">            
+                    <div class="movieTitle">Family</div>
+                    <div ng-controller="MoviesController">
+                        <ul class="img-thumbnails">
+                            <li class="thumbnail" ng-repeat="movie in myMovies | filter:{Genres:'Family' }" style="display:inline-block; width:200px">
+                                <a ng-href="#/movies/{{movie.id}}">
+                                    <img src="{{movie.Image}}">{{movie.Title}}
+                                </a>
+                            </li>
+                        </ul>                                    
+                    </div>
+                </div>
+            </div>
+                    
+            <!-- list of kids movies -->                                          
+            <div id="kids" class="tab-pane fade">
+                <div  style="padding-left:150px">            
+                    <div class="movieTitle">Kids</div>
+                    <div ng-controller="MoviesController">
+                        <ul class="img-thumbnails">
+                            <li class="thumbnail" ng-repeat="movie in myMovies | filter:{Genres:'Kids' }" style="display:inline-block; width:200px">
+                                <a ng-href="#/movies/{{movie.id}}">
+                                    <img src="{{movie.Image}}">{{movie.Title}}
+                                </a>
+                            </li>
+                        </ul>                                    
+                    </div>
+                </div>
+            </div>
+                    
+            <!-- list of Sci-Fi & Fantasy movies -->
+            <div id="sci" class="tab-pane fade">
+                <div  style="padding-left:150px">            
+                    <div class="movieTitle">Sci-Fi &amp; Fantasy</div>
+                    <div ng-controller="MoviesController">
+                        <ul class="img-thumbnails">
+                            <li class="thumbnail" ng-repeat="movie in myMovies | filter:{Genres:'Sci-Fi & Fantasy' }" style="display:inline-block; width:200px">
+                                <a ng-href="#/movies/{{movie.id}}">
+                                    <img src="{{movie.Image}}">{{movie.Title}}
+                                </a>
+                            </li>
+                        </ul>                                    
+                    </div>
+                </div>
+            </div>
+                    
+            <!-- list of suspense movies -->
+            <div id="suspense" class="tab-pane fade">
+                <div  style="padding-left:150px">            
+                    <div class="movieTitle">Suspense</div>
+                    <div ng-controller="MoviesController">
+                        <ul class="img-thumbnails">
+                            <li class="thumbnail" ng-repeat="movie in myMovies | filter:{genres:'Suspense' }" style="display:inline-block; width:200px">
+                                <a ng-href="#/movies/{{movie.id}}">
+                                    <img src="{{movie.Image}}">{{movie.Title}}
+                                </a>
+                            </li>
+                        </ul>                                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
+

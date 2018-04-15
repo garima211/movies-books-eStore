@@ -1,0 +1,112 @@
+
+  
+<div class="container">    
+  <div class="row content">
+    <div class="col-sm-4">
+    </div>
+    
+    <div class="col-sm-4 col-xs-12" style="display:inline-block;"> 
+        <div class="panel panel-default" >
+            
+            <div class="panel-body">
+                
+                <form role="form" name="myForm" novalidate>
+                    
+                <h2 style="float:left;padding-bottom:5px;">Create account</h2>
+             
+                    
+                <div class="form-group"style="clear:left;">
+                    <label for="usr"style="float:left;">Your Name</label>
+                        <input type="text" class="form-control" id="usr" name="myName" ng-model="myName" required placeholder="Your name">
+                        <span  style="color:red" ng-show="myForm.myName.$touched && myForm.myName.$invalid">The name is required.</span>
+                </div>
+                
+                <div class="form-group" style="clear:left;">
+                        <label for="email" style="float:left;" >Email</label>
+                    <input type="email" class="form-control" ng-model="email" name="email"  id="email" required placeholder="Enter email">
+                    <span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+                    <span ng-show="myForm.email.$error.required">Email is required.</span>
+                    <span ng-show="myForm.email.$error.email">Invalid email address.</span>
+                    </span>
+                </div>
+                    
+                <div class="form-group">
+                        <label for="pwd" style="float:left;" >Password</label>
+                        <input type="password" class="form-control" name="pwde" id="pwd1" placeholder="Enter password" required ng-minlength="6">
+                        <span  style="color:red" ng-show="myForm.pwde.$touched && myForm.pwde.$invalid &&myForm.pwde.$error.minlength">Password should be atleast 6 characters.</span>
+                </div>
+                    
+                <div class="form-group">
+                        <label for="pwd" style="float:left;" >Password again</label>
+                        <input type="password" class="form-control" id="pwd2" placeholder="Enter password" required>
+                </div>
+      
+               
+                <a ui-sref="Address">
+                    <input type="button" class="form-control" value="Next" style="background-color: #EBEBE6;color:black;" onmouseover="validate();">                  
+                </a>
+      
+                <div style=" margin-top: 20px;text-align: left;">
+                    <p>By creating an account you agree to our <a style="text-decoration:underline">Conditions of Use </a> and our <a style="text-decoration:underline">Privacy Notice.</a></p>
+                </div>
+                <hr> 
+                <div  style="margin-top: 20px;text-align:left; font-size:10px" >
+                    <p>Already have an account?<span> </span><a ui-sref="SignIn" style="text-decoration:underline">Sign In </a></p>
+                </div>    
+                    
+                </form>
+                
+                </div>
+         
+            </div>
+
+        </div>
+        <div class="col-sm-4 col-xs-12" style="float:left;" >
+      
+        </div>
+ 
+    </div>
+</div>
+
+
+<script>    
+  function validate() {
+        var username = document.getElementById("usr").value;
+       var email = document.getElementById("email").value;
+        var password1 = document.getElementById("pwd1").value;
+        var password2 = document.getElementById("pwd2").value;                                             
+        if (username == null || username == "") {
+            alert("Please enter the username.");
+            return false;
+        }
+        if (email == null ||email== "") {
+            alert("Please enter the email.");
+            return false;
+        }
+        if (password1 == null || password1 == "" || password1.length < 6 ) {
+            alert("Please enter the password and it should be 6 characters.");
+            return false;
+        }
+         if (password2 == null || password2 == "") {
+            alert("Please enter the password in Password Again.");
+            return false;
+        }
+        if (password1 !== password2 ) {
+            alert("Please enter same password.");
+            return false;
+        }                                                        
+                                                                
+        if ((username !== null ) && (email !== null)  && (password1 !== null) && (password2 == password1)) {
+              
+            return false;        
+            
+        }
+        else {
+            alert ("Creating account unsuccessful, please check your username and password");
+            
+            return false;
+        }
+        
+
+    } 
+</script>

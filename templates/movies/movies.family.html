@@ -1,0 +1,17 @@
+<div class="col=md-10"  >
+    <div class="container">
+        <!-- list of family movies -->                                          
+        <div  style="padding-left:150px">            
+        <div class="movieTitle">Family</div>
+            <div ng-controller="MoviesController">
+                <ul class="img-thumbnails">
+                    <li class="thumbnail" ng-repeat="movie in myMovies | filter:{Genres:'Family' }" style="display:inline-block; width:200px">
+                        <a ng-href="#/movies/{{movie.id}}">
+                            <img src="{{movie.Image}}">{{movie.Title}}
+                        </a>
+                    </li>
+                </ul>                                    
+            </div>
+        </div>
+    </div>
+</div>

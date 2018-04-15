@@ -1,0 +1,18 @@
+<div class="col=md-10"  >
+    <div class="container">
+        <!-- most popular movies-->
+        <div style="padding-left:150px">            
+        <div class="movieTitle">Teens</div>
+            <div ng-controller= "booksCtrl">
+                <ul class="img-thumbnails">
+                    <li class="thumbnail" ng-repeat="person in books  | filter:{genres:'teens'} " style="display:inline-block; width:200px">
+                        <a ng-href="#/book/{{person.id}}">
+                            <img ng-src = "{{person.image}}"  alt="Cinque Terre" >
+                                {{person.Title}}
+                        </a>       
+                    </li>
+                </ul>                              
+            </div>
+        </div>   
+    </div>
+</div>

@@ -1,0 +1,107 @@
+<style>
+    #wrapper {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        width: 1000px;
+        height: 150px;
+        padding: 10px;
+        position:absoulte;
+        left:20%;
+        right:20%;
+    }
+    #carousel img {
+        width:100%;
+        height:150px;
+        margin:0 5px;
+        float:left;
+    }
+    #prev, #next {
+        background:transparent;
+    }
+</style>
+
+<div class="container">
+    <div class="well" >
+    <!-- carousel container-->
+	<div ng-controller="MainController" id="slidesControl">
+		<!-- top main carousel -->
+        <carousel interval="myInterval">
+            <slide ng-repeat="slide in slides" active="slide.active">
+				<img ng-src="{{slide.image}}" style="width:100%; height:500px" >
+					<div class="carousel-caption">
+						<h4>Slide {{$index + 1}}</h4>
+					</div>
+            </slide>
+        </carousel>
+        
+    <div style="padding:26px">
+        <!-- moviesList container -->
+        <div class="row"> 
+            <!-- link for movies page -->
+            <a ui-sref="movies.all">
+                <h1 id="moviesList" class="product-list-header" style="display:block">
+                Movies <span class="glyphicon glyphicon-menu-right"></span>
+                </h1>
+            </a>
+        </div>
+        
+        <!-- movies images slider -->
+        <div class="row">
+                 <ul class="img-thumbnails" ng-repeat="product in myProducts | limitTo:5" style="display:inline-block; width:210px; margin-left:0px;  padding-left:32px;">
+                    <li class="thumbnail">
+                        <a popover data-original-title ='{{product.Title}} <br><br> <small>{{product.Rating}} /  {{product.Runtime}}</small>'> 
+                        <img src="{{product.Image}}">{{product.Title}}
+                        
+                        <div class="popover-content hide">
+                            <div ng-model="description">
+                            {{product.Description}}
+                            </div><br>
+                            <button style="width:150px" ng-click="cart.addItem(product.sku, product.Title, product.Price, 1)" class="btn  btn-primary">
+                                <i class="fa fa-shopping-cart"></i> add to cart
+                            </button>
+                        </div>
+                        </a>        
+                    </li>
+                </ul> 
+        </div>
+    </div>
+
+    <!-- carousel Ad row -->
+  
+     <div id="adSlidesControl">
+			<carousel interval="myInterval" style="width:1020px; margin-left:40px">
+				<slide ng-repeat="adSlide in adSlides" active="slide.active">
+					<a href="http://www.redbox.com/" target="_blank">
+                        <img ng-src="{{adSlide.image}}" style="width:100%; height:80px">
+                    </a>
+					<div class="carousel-caption">
+						<h4>Slide {{$index + 1}}</h4>
+					</div>
+				</slide>
+			</carousel>
+		</div>
+     
+    <div style="padding:26px">
+     <!-- booksList container -->
+        <div class="row"> 
+            <!-- link for movies page -->
+            <a ui-sref="book.all">
+                <h1 id="booksList" class="product-list-header" style="display:block;">
+                Books <span class="glyphicon glyphicon-menu-right"></span>
+                </h1>
+            </a>
+        </div>
+        <!-- books images slider -->
+        <div class="row">
+            <ul class="img-thumbnails" ng-repeat="product in myProducts | filter: 'B0' |limitTo:5" style="display:inline-block; width:210px; margin-left:0px;  padding-left:32px;"> 
+                <li class="thumbnail">
+                    <a popover data-original-title='{{product.Title}} <br><br> <small>{{product.Author}} /  {{product.Genres}}</small>'>
+                        <img src="{{product.Image}}">{{product.Title}}
+                    </a>         
+                </li>
+            </ul>   
+        </div>
+    </div>
+    </div>
+    </div>
+</div>
