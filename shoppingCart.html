@@ -1,0 +1,86 @@
+<div class="well">
+    <div class="container-fluid">
+        <h4>Shopping Cart</h4>
+        
+        <div class="row">
+            <div class="col-sm-9">
+                <table class="table">
+                    <!--header -->
+                    <thead>
+                        <tr style="font-size:12px">
+                            <th>Product</th>
+                            <td></td>
+                            <td></td>
+                            <th>Price</th>
+                            <td></td>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    
+                    <!-- empty cart message -->
+                    <tr class="cartSubTitle" ng-hide="cart.getTotalCount() > 0" >
+                        <td class="tdCenter" colspan="4">
+                            Your cart is empty.
+                        </td>
+                    </tr>
+                    
+                    <!-- shopping cart body -->
+                    <tbody ng-controller="ItemController">
+                        <!-- cart items -->
+                        <tr ng-repeat="item in cart.items | orderBy:'name'" style="font-size:13px">
+                            
+                            <td><b>{{item.name}}</b>  
+                                <br>
+                                <p class="tdCenter" title="remove from cat">
+                                    <a href="" ng-click="cart.addItem(item.sku, item.name, item.price, -10000000)" style="text-decoration:underline; font=size:12px; color:red">Delete</a>
+                                </p>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td> {{item.price | currency: $ : 2}} </td>
+                            <td></td>
+                            <td>
+                                <input class="text-center" type="number" min="0" max="100" step="1" ng-model="item.quantity" ng-change="cart.saveItems()">
+                            </td>
+                            <td class="tdCenter"> {{item.price * item.quantity | currency : $ : 2}} </td>
+                        </tr>
+                        
+                        <!-- total row -->
+                        <tr class="cartTitle">
+                            <td class="tdCenter"><b>Total of&nbsp;({{cart.getTotalCount()}})&nbsp;items:</b></td>
+                            <td colspan="5"></td>
+                            <td class="tdCenter"><b>{{cart.getTotalPrice() | currency}}</b></td> 
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- buttons on the right -->
+            <div class="col-sm-3">
+                <div class="textCenter panel panel-default" style="margin-left:30px; margin-top:10px ">
+                 <div class="panel-body" style="font-style:italic; font-weight:bold">
+                    <form>
+                     <a ui-sref="home">
+                     <button class="btn btn-block btn-primary" style="background-color: #006699;color:white;">Continue Shopping</button>
+                     </a>
+                     <br>
+                     
+                    <button class="btn btn-block btn-secondary"  ng-click="cart.clearItems()" ng-disabled="cart.getTotalCount()<1" >
+                        <i class="fa fa-trash-o"><span  class="cartSubTitle" style=" font-weight:bold">Clear Cart</span></i>
+                    </button><br>
+                     
+                    
+                     <button id="checkout" class="btn btn-block btn-primary" style="background-color: #006699;color:white;" ng-disabled="cart.getTotalCount()<1">
+                        <a style="color:white;" ui-sref-if="!cart.getTotalCount()<1" ui-sref="checkout">  
+                            Proceed to Checkout
+                         </a>
+                    </button>
+                     </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>

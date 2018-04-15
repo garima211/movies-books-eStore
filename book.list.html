@@ -1,0 +1,137 @@
+
+                                
+                   
+        <div class="col=md-10"  >
+                <div class="container">
+                <div class="tab-content" >
+                    <!-- most popular movies-->
+                    <div id="mostpopular" class="tab-pane fade ">
+                        <div style="padding-left:150px">            
+                            <div class="movieTitle">Most Popular</div>
+                               <div ng-controller= "booksCtrl">
+                                <ul class="img-thumbnails">
+                                    <li class="thumbnail" ng-repeat="person in books | limitTo:8" style="display:inline-block; width:200px">
+                                        <a ng-href="#/book/{{person.id}}">
+                                            <img ng-src = "{{person.image}}"  alt="Cinque Terre" >
+                                            {{person.Tittle}}
+                                        </a>
+                                        
+                                        
+                                    </li>
+                                </ul>                              
+                            </div>
+                        </div>  
+                    </div>
+                    <div id="all" class="tab-pane fade in active ">
+                        <div style="padding-left:150px">            
+                            <div class="movieTitle">All</div>
+                               <div ng-controller= "booksCtrl">
+                                <ul class="img-thumbnails">
+                                    <li class="thumbnail" ng-repeat="person in books " style="display:inline-block; width:200px">
+                                        <a ng-href="#/book/{{person.id}}">
+                                            <img ng-src = "{{person.image}}"  alt="Cinque Terre" >
+                                            {{person.Tittle}}
+                                        </a>
+                                        
+                                        
+                                    </li>
+                                </ul>                              
+                            </div>
+                        </div>  
+                    </div>
+                   
+                    
+                    <div id="teens" class="tab-pane fade">
+                        <div style="padding-left:150px">            
+                            <div class="movieTitle">Teens</div>
+                               <div ng-controller= "booksCtrl">
+                                <ul class="img-thumbnails">
+                                    <li class="thumbnail" ng-repeat="person in books  | filter:{genres:'teens'} " style="display:inline-block; width:200px">
+                                        <a ng-href="#/book/{{person.id}}">
+                                            <img ng-src = "{{person.image}}"  alt="Cinque Terre" >
+                                            {{person.Tittle}}
+                                        </a>
+                                        
+                                        
+                                    </li>
+                                </ul>                              
+                            </div>
+                        </div>  
+                    </div>
+                    
+                    <div id="Fic" class="tab-pane fade">
+                        <div style="padding-left:150px">            
+                            <div class="movieTitle">Fiction</div>
+                               <div ng-controller= "booksCtrl">
+                                <ul class="img-thumbnails">
+                                    <li class="thumbnail" ng-repeat="person in books  | filter:{genres:'fiction'} " style="display:inline-block; width:200px">
+                                        <a ng-href="#/book/{{person.id}}">
+                                            <img ng-src = "{{person.image}}"  alt="Cinque Terre" >
+                                            {{person.Tittle}}
+                                        </a>
+                                        
+                                        
+                                    </li>
+                                </ul>                              
+                            </div>
+                        </div>  
+                    </div>
+                    <div id="non-fic" class="tab-pane fade">
+                        <div style="padding-left:150px">            
+                            <div class="movieTitle">Non-Fiction</div>
+                               <div ng-controller= "booksCtrl">
+                                <ul class="img-thumbnails">
+                                    <li class="thumbnail" ng-repeat="person in books  | filter:{genres:'non-fiction'} " style="display:inline-block; width:200px">
+                                        <a ng-href="#/book/{{person.id}}">
+                                            <img ng-src = "{{person.image}}"  alt="Cinque Terre" >
+                                            {{person.Tittle}}
+                                        </a>
+                                        
+                                        
+                                    </li>
+                                </ul>                              
+                            </div>
+                        </div>  
+                    </div>
+                    <div id="family" class="tab-pane fade">
+                        <div style="padding-left:150px">            
+                            <div class="movieTitle">Family</div>
+                               <div ng-controller= "booksCtrl">
+                                <ul class="img-thumbnails">
+                                    <li class="thumbnail" ng-repeat="person in books  | filter:{genres:'family'} " style="display:inline-block; width:200px">
+                                        <a ng-href="#/book/{{person.id}}">
+                                            <img ng-src = "{{person.image}}"  alt="Cinque Terre" >
+                                            {{person.Tittle}}
+                                        </a>
+                                        
+                                        
+                                    </li>
+                                </ul>                              
+                            </div>
+                        </div>  
+                    </div>
+                    <div id="kids" class="tab-pane fade ">
+                        <div style="padding-left:150px">            
+                            <div class="movieTitle">Kids</div>
+                               <div ng-controller= "booksCtrl">
+                                <ul class="img-thumbnails">
+                                    <li class="thumbnail" ng-repeat="person in books  | filter:{genres:' kids'} " style="display:inline-block; width:200px">
+                                        <a ng-href="#/book/{{person.id}}">
+                                            <img ng-src = "{{person.image}}"  alt="Cinque Terre" >
+                                            {{person.Tittle}}
+                                        </a>
+                                        
+                                        
+                                    </li>
+                                </ul>                              
+                            </div>
+                        </div>  
+                    </div>
+                    
+                    
+                    
+                    </div>
+       </div>
+</div>
+                    
+                    

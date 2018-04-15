@@ -1,0 +1,105 @@
+<style>
+    .movieDescriptionTitle {
+        font-weight:bold;
+        font-size: 20px;
+       
+    }
+    .movieDescriptionDetail {
+        font-size:15px;
+        text-align: justify;
+        text-justify: inter-word;
+    }
+    h4 {
+        font-weight:bold;
+    }
+</style>
+
+<div ng-controller="TypeaheadCtrl">
+  
+    <!-- movies -->
+    <div class="row" ng-show="isMovies(mysearch.type)">
+    <div class="col-md-3">
+        <div class="img-thumbnails">
+            <img ng-src = "{{mysearch.Image}}" class="img-thumbnail" alt="{{mysearch.Title}}">
+            <br>
+      
+            <div >
+                <span style="float:left" >
+                <span class="movieDescriptionDetail">Rating : </span><span class="movieDescriptionTitle"> {{mysearch.Rating}} </span>
+                </span>
+                <span style="float:right">
+                <span class="movieDescriptionDetail">Runtime : </span><span class="movieDescriptionTitle"> {{mysearch.Runtime}} </span> 
+                </span>
+            </div> <br><br>
+            <div>
+                <div>
+                    <span class="movieDescriptionDetail">Price :</span><span id= "price">{{mysearch.Price | currency}}</span>
+                </div><br>
+                <div>
+                    <span>
+                        <button style="width:150px" ng-click = "cart.addItem(mysearch.sku, mysearch.Title, mysearch.Price, 1 ) "class="btn  btn-success" role="button" ><i class="fa fa-shopping-cart"></i> add to cart</button><br><br>
+                    </span>
+                </div>
+            </div>
+        </div>   
+    </div>
+    
+    <div class="col-md-6">
+        <div class="movieDescriptionDetail">
+        <h2><b> {{mysearch.Title}} </b></h2><br>
+            
+            <div>
+                <h4>Plot :</h4>
+                <p class="movieDescriptionDetail">
+                    {{mysearch.Description}}
+                </p> 
+            </div>
+        
+        <h4>Starring :</h4> {{ mysearch.Starring }} 
+        <h4>Directors :</h4>{{mysearch.Directors}}
+        <h4>Genres :</h4>{{mysearch.Genres}}
+        <h4>Studio :</h4>{{mysearch.Studio}}
+        <h4>Subtitles :</h4>{{mysearch.Subtitles}}
+            
+        </div>
+    </div>
+    </div>
+    
+    <!-- books detail -->
+    <div class="row"  ng-show="!isMovies(mysearch.type)">
+    <div class="col-md-3">
+        <div class="img-thumbnails">
+            <img ng-src = "{{mysearch.Image}}" class="img-thumbnail" alt="{mysearch.Title}}">
+            <br><br><br>
+            <div>
+                <div>
+                    <span class="movieDescriptionDetail">Price :</span><span id= "price">{{mysearch.Price | currency}}</span>
+                </div><br>
+                <div>
+                    <span>
+                        <button style="width:150px" ng-click = "cart.addItem(mysearch.sku, mysearch.Title, mysearch.Price, 1 ) "class="btn  btn-success" role="button" ><i class="fa fa-shopping-cart"></i> add to cart</button><br><br>
+                    </span>
+                </div>
+            </div>
+        </div>   
+    </div>
+    
+    <div class="col-md-6">
+        <div class="movieDescriptionDetail">
+        <h2><b> {{mysearch.Title}} </b></h2><br>
+            
+            <div>
+                <h4>Plot :</h4>
+                <p class="movieDescriptionDetail">
+                    {{mysearch.Description}}
+                </p> 
+            </div>
+            
+        <h4>Author :</h4>{{ mysearch.Author }}
+        <h4>Genres :</h4>{{ mysearch.Genres }}
+            
+        </div>
+    </div>
+    </div>
+    
+</div>

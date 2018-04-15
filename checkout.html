@@ -1,0 +1,148 @@
+<div class="well">
+    
+    <h2>Shipping Address</h2>
+    <hr>
+    <div class="checkout" style="font-size:15px">
+    <h3>{{vm.user.firstName}} {{vm.user.lastName}}</h3>
+        <h4>{{vm.user.address}}, {{vm.user.address2}} {{vm.user.city}} {{vm.user.state}}  {{vm.user.zipcode}} {{vm.user.country}} </h4><br><br>
+    </div>
+    <!--<div ui-view="modalregister"></div>-->
+    <!-- Edit button -->
+    <div style="float:left" >
+        <!--<button ng-click="toggleModal()" class="btn btn-secondary">Edit</button> -->
+         
+        <button class="btn btn-block btn-primary" data-toggle="modal" data-target="#myModalHorizontal" style="background-color: #006699;color:white; margin-bottom:20px; ">
+            Edit Shipping Address
+        </button>
+    </div>
+     <div style="float:right" >   
+        <button class="btn btn-block btn-primary" ng-click="cart.checkout('PayPal')" ng-disabled="cart.getTotalCount()<1 " style="background-color: #006699;color:white;" >
+            <i class="icon-ok icon-white"> Checkout with PayPal</i>
+        </button>
+        
+        
+        
+        
+        <div class="modal fade" id="myModalHorizontal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                       <span aria-hidden="true">&times;</span>
+                       <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        Shipping Address
+                    </h4>
+                </div>
+            
+                <!-- Modal Body -->
+                <div class="modal-body">  
+                    <form name="form" ng-submit="vm.register()" role="form">
+                        
+                    <!-- firstname -->
+                    <div class="form-group" ng-class="{ 'has-error': form.firstName.$dirty && form.firstName.$error.required }" style="clear:left;">
+                        <label for="username" style="float:left;font:13px Arial,sans-serif;">First name</label>
+                        <input type="text" placeholder="First name" name="firstName" id="firstName" class="form-control" ng-model="vm.user.firstName" required />
+                        <span style="color:red" ng-show="form.firstName.$dirty && form.firstName.$error.required" class="help-block">First name is required</span>
+                    </div>  
+                        
+                    <!-- lastname -->
+                    <div class="form-group" ng-class="{ 'has-error': form.lastName.$dirty && form.lastName.$error.required }" style="clear:left;">
+                        <label for="username" style="float:left;font:13px Arial,sans-serif;">Last name</label>
+                        <input type="text" placeholder="Last name" name="lastName" id="Text1" class="form-control" ng-model="vm.user.lastName" required />
+                        <span style="color:red" ng-show="form.lastName.$dirty && form.lastName.$error.required" class="help-block">Last name is required</span>
+                    </div>
+                    
+                    <!-- address through googleAPI -->
+                    <div class="form-group" ng-class="{ 'has-error': form.address1.$dirty && form.address1.$error.required }">
+                        <label for="address" style="float:left;font:13px Arial,sans-serif;">Address</label>
+                        <input vs-google-autocomplete
+                            ng-model="address.name"
+                            ng-change="vm.user.address=address.name"
+                            vs-place="address.place" 
+                            vs-place-id="address.components.placeId"
+                            vs-street-number="address.components.streetNumber" 
+                            vs-street="address.components.street"
+                            vs-city="address.components.city"
+                            vs-state="address.components.state"
+                            vs-country-short="address.components.countryCode"
+                            vs-country="address.components.country"
+                            vs-post-code="address.components.postCode"
+                            vs-district="address.components.district"
+                            vs-latitude="address.components.location.lat"
+                            vs-longitude="address.components.location.long"
+                 
+                                type="text" 
+                                name="address"
+                                id="address"
+                                class="form-control" 
+                                placeholder="Address"
+                                required > 
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="address2" style="float:left;font:13px Arial,sans-serif;">Address line 2</label>
+                        <input class="help-block form-control" placeholder="Address line 2" ng-model="vm.user.address2" /> 
+                    </div>
+                        
+                    <div class="form-group">
+                        <label for="city" style="float:left;font:13px Arial,sans-serif;">City</label>
+                        <input class="help-block form-control" value="{{address.components.city}}" placeholder="City" ng-model="vm.user.city" required/> 
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="state" style="float:left;font:13px Arial,sans-serif;">State</label>
+                        <input class="help-block form-control" value="{{address.components.state}}" placeholder="State" ng-model="vm.user.state" required/>
+                    </div>
+                    
+                    <div class="form-group">    
+                        <label for="zipcode" style="float:left;font:13px Arial,sans-serif;">Zipcode</label>
+                        <input class="help-block form-control" value="{{address.components.postCode}}" placeholder="Zipcode" ng-model="vm.user.zipcode" required/>
+                    </div>
+                    
+                    <div class="form-group">    
+                        <label for="country" style="float:left;font:13px Arial,sans-serif;">Country</label>
+                        <input class="help-block form-control" value="{{address.components.country}}" placeholder="Country" ng-model="vm.user.country" required/>
+                    </div>
+                        
+                    <!-- Modal Footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default"
+                            data-dismiss="modal">
+                            Close
+                        </button>
+                        
+                        <button type="submit" class="btn btn-primary" data-dismiss="modal">
+                            Save changes
+                        </button>
+                    </div>
+                    </form>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   <br><br><br>
+        </div>
+    
+    
+        
+
+
+
+
+
+<!--
+<modal title="Update your shipping address" visible="showModal">
+            <form role="form">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter full name" />
+                    <label for="address">Address Line 1</label>
+                    <input type="text" class="form-control" id="address1" placeholder="Enter address line 1" />
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+        </modal> -->

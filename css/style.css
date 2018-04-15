@@ -1,0 +1,418 @@
+html,
+body {
+   margin:0;
+   padding:0;
+   height:100%;
+}
+#maincontainer {
+   min-height:100%;
+   position:relative;
+}
+#header {
+   background:#165788;
+}
+#bodycontainer {
+   padding:10px;
+   padding-bottom:60px;   /* Height of the footer */
+}
+#footer {
+   position:absolute;
+   bottom:0;
+   width:100%; 
+    border-top:5px solid black;
+}
+body {
+	background-color:#fff;
+	font-family:Arial,  sans-serif;
+	font-size:87.5%;
+	line-height:24px;
+	margin:0;
+	padding:0;
+	overflow-x:hidden;
+	display:block;
+	vertical-align:baseline;
+	z-index:750;
+}
+
+.header-color {
+	background-color:#165788;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+color: white;  /*Sets the text hover color on navbar*/
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active >   
+ a:hover, .navbar-default .navbar-nav > .active > a:focus {
+color: white /*BACKGROUND color for active*/
+background-color: #165788;
+}
+
+.navbar-default {
+    
+    background-color: #165788;
+    border-color: #165788;
+    }
+.nav > li > a:hover,
+.nav > li > a:focus {
+    text-decoration: none;
+    background-color: silver; /*Change rollover cell color here*/
+  }
+.navbar-default .navbar-nav > li > a {
+   color: white /*Change active text color here*/
+    }
+.header-font-style  {
+	color:white;
+	font-size:15px;
+}
+.header-font-style-small {
+    color:white;
+	font-size:10px;
+}
+.navbar-brand {
+	font-family:Brush Script MT;
+	font-weight:bold;
+	font-size:40px;
+}
+.navbar-brand small {
+  display:block;
+  font-size:12px;
+  font-family:Arial, sans-serif;
+}
+
+.header-font-bold {
+	font-weight:bold;
+    font:Arial, sans-serif;
+}
+.header-font-small {
+	font-size:10px;
+}
+a {
+	color:black;
+}
+.break-style {
+	margin-top:12px;
+}
+.icon-addon .form-control {
+    border-radius:20px;
+}
+.icon-addon {
+    position: relative;
+    color: #555;
+    display: block;
+}
+.icon-addon:after,
+.icon-addon:before {
+    display: table;
+    content: " ";
+}
+.icon-addon:after {
+    clear: both;
+}
+.icon-addon .glyphicon,
+.icon-addon.addon-sm .fa,
+.icon-addon .fa {
+    position: absolute;
+    z-index: 2;
+    left: 10px;
+    font-size: 14px;
+    width: 20px;
+    margin-left: -2.5px;
+	margin-top:12px;
+    text-align: center;
+    padding: 10px 0;
+    top: 1px;
+}
+.icon-addon.addon-sm .form-control {
+    height: 30px;
+    padding: 5px 10px 5px 40px;
+    font-size: 12px;
+    line-height: 1.5;
+	margin-top:12px;
+}
+.icon-addon.addon-sm .fa,
+.icon-addon.addon-sm .glyphicon {
+    margin-left: 0;
+    font-size: 12px;
+    left: 5px;
+    top: -1px
+}
+.icon-addon .form-control:focus + .glyphicon,
+.icon-addon:hover .glyphicon {
+    color: #2580db;
+}
+.glyphicon-shopping-cart {
+	margin-top:16px;
+	padding-right:20px;
+	font-size:20px;
+	color:#ffffff;
+}
+.icon-flipped {
+transform: scaleX(-1);
+-moz-transform: scaleX(-1);
+-webkit-transform: scaleX(-1);
+-ms-transform: scaleX(-1);
+}
+footer .row {
+	text-align:left;
+	font-size:15px;    
+}
+#left-menu {
+	width:95px;
+	margin-left:20px;
+}
+#left-menu .social-icons {
+	padding:10px 10px 10px 10px;
+}
+#slides_control > div{
+  height: 300px;
+}
+img{
+  margin:auto;
+  width: 300px;
+}
+#slides_control {
+  position:absolute;
+  width: 300px;
+  left:20%;
+  top:20px;
+ margin-left:-200px;
+}
+
+/* movies page css */
+.movieTitle {
+    text-decoration:underline;
+    font-stye:omnes_regular,Arial,"Trebuchet MS",sans-serif;
+    padding-bottom:0;
+    list-style-type:none;
+    text-decoration:none;
+}
+
+.leftmenu {
+    width:150px;	
+    font-size:15px;
+    text-align:right;
+    padding:0;
+    margin:0;
+}
+
+.movieTitle {
+    font-size:15px;
+    font-weight:bold;
+    padding-left:42px;
+    margin:0;
+}
+.list-unstyled {
+	list-style: none;
+}
+.list-inline li {
+	display: inline-block;
+	
+}
+.social-icons .fa {
+	font-size: 1.8em;
+}
+/*Change icons circle size and color here*/
+.social-icons .fa {
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	color: #FFF;
+	color: rgba(255, 255, 255, 0.8);
+	
+}
+
+/* shoppingCart style */
+.tdCenter .textInfo
+{
+    text-align: center;
+}
+.tdRight
+{
+    text-align: right;
+}
+.cartTitle {
+    font-size:15px;
+    font-weight:bold;
+    padding-left:15px;
+    margin:0;
+}
+.cartSubTitle {
+    font-size:15px;
+    padding-left:15px;
+    margin:0;
+}
+.textCenter {
+    font-size:15px;
+    font-weight:bold;
+    margin:0;   
+}
+/** for multi-image carousel **/
+.wrapper {
+    max-width: 1050px; /** sets the width of carousel **/
+    padding: 0 20px 40px 20px;
+    margin: auto;
+}
+
+.jcarousel-wrapper {
+    margin: 20px auto;
+    position: relative;
+    border: 10px solid #fff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 0 2px #999;
+    -moz-box-shadow: 0 0 2px #999;
+    box-shadow: 0 0 2px #999;
+}
+
+/** Carousel **/
+
+.jcarousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.jcarousel ul {
+    width: 20000em;
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.jcarousel li {
+    width: 200px;
+    float: left;
+    border: 1px solid #fff;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.jcarousel img {
+    display: block;
+    max-width: 100%;
+    height: auto !important;
+}
+
+/** Carousel Controls **/
+
+.jcarousel-control-prev,
+.jcarousel-control-next {
+    position: absolute;
+    top: 50%;
+    margin-top: -15px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    background: #4E443C;
+    color: #fff;
+    text-decoration: none;
+    text-shadow: 0 0 1px #000;
+    font: 24px/27px Arial, sans-serif;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    -webkit-box-shadow: 0 0 4px #F0EFE7;
+    -moz-box-shadow: 0 0 4px #F0EFE7;
+    box-shadow: 0 0 4px #F0EFE7;
+}
+
+.jcarousel-control-prev {
+    left: 15px;
+}
+
+.jcarousel-control-next {
+    right: 15px;
+}
+
+/** Carousel Pagination **/
+
+.jcarousel-pagination {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    margin: 0;
+}
+
+.jcarousel-pagination a {
+    text-decoration: none;
+    display: inline-block;
+
+    font-size: 11px;
+    height: 10px;
+    width: 10px;
+    line-height: 10px;
+
+    background: #fff;
+    color: #4E443C;
+    border-radius: 10px;
+    text-indent: -9999px;
+
+    margin-right: 7px;
+
+
+    -webkit-box-shadow: 0 0 2px #4E443C;
+    -moz-box-shadow: 0 0 2px #4E443C;
+    box-shadow: 0 0 2px #4E443C;
+}
+
+.jcarousel-pagination a.active {
+    background: #4E443C;
+    color: #fff;
+    opacity: 1;
+
+    -webkit-box-shadow: 0 0 2px #F0EFE7;
+    -moz-box-shadow: 0 0 2px #F0EFE7;
+    box-shadow: 0 0 2px #F0EFE7;
+}
+.popover {
+    border-radius: 25px;
+    background-color:#F8F8F8 ;
+    padding:10px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+.popover-title {
+    background-color: #F8F8F8; 
+    color: black; 
+    font-size: 18px;
+    font-weight: bold;
+    text-align:left;
+    border-bottom:1px dotted black;
+}
+.popover-content {
+    color: black;
+}
+.stylebox {
+    border-radius:25px;
+}
+.checkout {
+    font-size:15px;
+    text-align:left;
+}
+
+/* Home page css */
+.product-list-header,
+.product-list-link {
+    color:black;
+    font-family: omnes_medium;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 1;
+    margin-bottom: .5em;
+    float: left;
+    padding-left:45px;
+    margin-left:10px;
+}
+#moviesList {
+    padding-left: 26px;
+}
+#booksList {
+    padding-left: 26px;
+}

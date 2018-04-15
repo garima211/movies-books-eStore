@@ -1,0 +1,20 @@
+<div class="well">
+        <div class="row">
+            <div class="col-md-2">
+               <ul class="nav nav-pills" id="leftmenuid">
+                    <li class="leftmenu" style="border-bottom:1px dotted black; font-weight: bold">Books</li>
+                    <li><a class="leftmenu" style="padding:0" ui-sref="book.all" >All</a></li>  
+                    <li><a class="leftmenu" style="padding:0" ui-sref="book.mostpopular" >Most Popular</a></li>
+                    <li class="leftmenu" style="border-bottom:1px dotted black; font-weight: bold">Genres</li>
+                    <li><a class="leftmenu" style="padding:0" ui-sref="book.family" >Family</a></li>
+                    <li><a class="leftmenu" style="padding:0" ui-sref="book.kids" >Kids</a></li>
+                    <li><a class="leftmenu" style="padding:0" ui-sref="book.teen" >Teens</a></li>
+                    <li><a class="leftmenu" style="padding:0" ui-sref="book.fiction" >Fiction</a></li>
+                    <li><a class="leftmenu" style="padding:0" ui-sref="book.nonfiction" >Non-Fiction</a></li>
+                </ul>   
+            </div>
+            <div class="container">
+					<div ui-view></div>
+            </div>
+      </div>
+</div>

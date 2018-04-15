@@ -1,0 +1,51 @@
+<style>
+    .movieDescriptionTitle {
+        font-weight:bold;
+        font-size: 20px;
+       
+    }
+    .movieDescriptionDetail {
+        font-size:15px;
+        text-align: justify;
+        text-justify: inter-word;
+    }
+    h4 {
+        font-weight:bold;
+    }
+       
+</style>
+<div class="row">
+    <div class="col-md-3">
+        <div class="img-thumbnails">
+            <img ng-src = "{{person.image}}" class="img-thumbnail" alt="{person.Title}}"><br>
+      
+         <br><br>
+            <div>
+                <div>
+                    <span class="movieDescriptionDetail">Price :</span><span id= "price">{{person.price | currency}}</span>
+                </div><br>
+                <div>
+                    <span>
+                        <button style="width:150px" ng-click = "cart.addItem(person.id, person.sku, person.Title, person.price, 1 ) "class="btn  btn-success" role="button" ><i class="fa fa-shopping-cart"></i> add to cart</button><br><br>
+                    </span>
+                </div>
+            </div>
+        </div>   
+    </div>
+    
+    <div class="col-md-6">
+        <div class="movieDescriptionDetail">
+        <h2><b> {{person.Title}} </b></h2><br>
+            
+            <div>
+                <h4>Plot :</h4>
+                <p class="movieDescriptionDetail">
+                    {{person.Discription}}
+                </p> 
+            </div>
+                
+        <h4>Author :</h4>{{ person.Author }}
+        <h4>Genres :</h4>{{ person.genres }}
+        </div>
+        </div>  
+</div>
